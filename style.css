@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  height: 100%;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, hsl(12, 89%, 89%) 0%, hsl(329, 82%, 76%) 50%, hsl(342, 95%, 78%) 100%);
+  padding: 1rem;
+}
+
+main {
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: linear-gradient(90deg, hsl(14, 90%, 73%) 0%, hsl(331, 54%, 44%) 100%);
+}
+main #start {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  border-radius: 1rem;
+  border: none;
+  color: #686565;
+  display: block;
+}
+main .main-container {
+  padding: 1rem;
+  display: none;
+}
+main .main-container .header {
+  display: flex;
+  background-color: #b86363;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  border-radius: 0.5rem;
+}
+main .main-container .header h2 {
+  color: rgb(80, 80, 80);
+  display: none;
+}
+main .main-container .header .time {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: #f0b3b3;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+}
+main .main-container .header .time span {
+  background-color: #686565;
+  padding: 4px;
+  border-radius: 12px;
+}
+main .main-container .question {
+  margin: 2rem 0;
+}
+main .main-container .container {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+main .main-container .container .box {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(191, 184, 184, 0.5647058824);
+  border-radius: 1rem;
+  border: 2px solid rgb(194, 198, 192);
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  color: #5c3e2b;
+  font-size: 1.2rem;
+}
+main .main-container .nextBtn {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .main-container .nextBtn button {
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: rgb(143, 166, 123);
+  color: white;
+}/*# sourceMappingURL=style.css.map */
