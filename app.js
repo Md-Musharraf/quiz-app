@@ -51,6 +51,14 @@ const quiz = [
   },
 ];
 
+// get data;
+// const getData = async () => {
+//   let response = await fetch("https://the-trivia-api.com/v2/questions");
+//   let data = await response.json();
+// };
+
+// getData();
+
 const start = document.querySelector("#start");
 const main = document.querySelector("main");
 const mainContainer = document.querySelector(".main-container");
@@ -63,9 +71,13 @@ const boxes = document.querySelectorAll(".box");
 const nextBtn = document.querySelector(".nextBtn button");
 const time = document.querySelector(".time span");
 const container = document.querySelector(".container");
+const right = document.querySelector("#right");
+const wrong = document.querySelector("#wrong");
 
 let index = 0;
 let num = 1;
+let rA = 0;
+let wA = 0;
 
 // for displaying the question and answer
 let updateContent = () => {
@@ -79,18 +91,38 @@ let updateContent = () => {
   index++;
   num++;
   startTimer();
+  boxes.forEach((box) => {
+    box.style.background = ""; // reset color
+    box.style.color = "";
+    box.disabled = false; // re-enable
+  });
 };
 
 // main logic
-container.addEventListener("click", function (event) {
-  if (event.target.textContent == quiz[index - 1].answer) {
-    console.log("winner");
-    event.target.style.background = "#17cd57";
-    event.target.style.color = "#ffff";
-  } else {
-    console.log("wrong answer");
-    event.target.style.background = "#d3c388";
-  }
+boxes.forEach(function (box) {
+  box.addEventListener("click", function (e) {
+    let correctAns = quiz[index - 1].answer;
+    boxes.forEach((b) => (b.disabled = true));
+
+    if (e.target.textContent === correctAns) {
+      box.style.background = "#17cd57";
+      box.style.color = "fff";
+      rA++;
+      right.innerHTML = `right : ${rA}`;
+    } else {
+      box.style.background = "#ff4d4d";
+      box.style.color = "fff";
+      wA++;
+      wrong.innerHTML = `wrong : ${wA}`;
+    }
+
+    boxes.forEach((b) => {
+      if (b.textContent === correctAns) {
+        b.style.background = "#17cd57";
+        b.style.color = "#fff";
+      }
+    });
+  });
 });
 
 // variable
@@ -113,6 +145,8 @@ let startTimer = function () {
       clearInterval(timeOut); // stop when time is over
       // you can also auto-next question here if you want
       document.querySelector("h2").style.display = "block";
+      wA++;
+      wrong.innerHTML = `wrong : ${wA}`;
     }
   }, 1000);
 };

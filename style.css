@@ -39,8 +39,15 @@ main #start {
   display: block;
 }
 main .main-container {
-  padding: 1rem;
+  padding: 0.7rem;
   display: none;
+}
+main .main-container .count {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0rem;
+  color: white;
 }
 main .main-container .header {
   display: flex;
@@ -50,19 +57,22 @@ main .main-container .header {
   justify-content: space-between;
   color: white;
   border-radius: 0.5rem;
+  font-size: 0.5rem;
 }
 main .main-container .header h2 {
   color: rgb(80, 80, 80);
   display: none;
+  font-size: 1rem;
 }
 main .main-container .header .time {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 24px;
   background-color: #f0b3b3;
-  padding: 0.5rem;
-  font-size: 1.1rem;
-  border-radius: 1rem;
+  padding: 0.2rem;
+  font-size: 0.6rem;
+  border-radius: 0.5rem 0.6rem;
 }
 main .main-container .header .time span {
   background-color: #686565;
@@ -70,7 +80,8 @@ main .main-container .header .time span {
   border-radius: 12px;
 }
 main .main-container .question {
-  margin: 2rem 0;
+  margin: 1.5rem 0;
+  font-size: 0.8rem;
 }
 main .main-container .container {
   display: flex;
